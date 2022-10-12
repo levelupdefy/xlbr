@@ -1,2 +1,3 @@
 # excalibur
-a web developement tool for linux and git-cli
+a web developement tool for git-cli 
+
