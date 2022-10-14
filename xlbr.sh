@@ -10,36 +10,74 @@ while getopts b:c:n: flag;
 do
     case "${flag}" in
         b) base=${OPTARG}
-        touch index.html
-        echo -e "xlbr.sh \nlog \nnode_modules \nremote " > .gitignore
-        mkdir src
         echo -e $green
+        echo -e "xlbr.sh \nlog \nnode_modules \nremote" > .gitignore
+        mkdir src
         echo "creating filesystem..."
-        echo -e $reset
         cd ./src/
         mkdir frm
         mkdir fnt
         mkdir img
         mkdir pug
         mkdir css
+        echo -e "created frm..."
+        echo -e "created fnt..."
+        echo -e "created img..."
+        echo -e "created pug..."
         cd css 
         echo "/*index.css ~ sadhukhanr*/" > index.css
         echo "//index.scss ~ sadhukhanr" > index.scss
+        echo -e "generated index.css... "
+        echo -e "generated index.scss... "
         cd ..
         mkdir js
         cd js
+        echo -e "created js..."
         echo "//logic.js ~ sadhukhanr" > logic.js
+        echo -e "generated logic.js... "
         cd .. 
+        echo -e "created ng-route..."
         mkdir ng-route
+        echo -e "created json..."
+        echo -e "generated data.json... "
         mkdir json
         cd json
         touch data.json
         cd ..
         cd ..
+        echo -e "created doc..."
         mkdir doc
+        cd doc
+        echo -e "# Tools \nthis project is created with excalibur \n[github](https://github.com/sadhukhanr/excalibur)" > tool.md
+        cd ..
+        echo -e "adding ISSUE_TEMPLATE"
+        echo -e $reset
+        mkdir .github
+        cd .github
+        mkdir ISSUE_TEMPLATE
+        cd ISSUE_TEMPLATE
+        curl https://raw.githubusercontent.com/sadhukhanr/open-source/main/.github/ISSUE_TEMPLATE/bug_report.md > bug_report.md
+        curl https://raw.githubusercontent.com/sadhukhanr/open-source/main/.github/ISSUE_TEMPLATE/feature_request.md > feature_request.md
+        echo -e $red
+        echo -e "generated bug_report.md... "
+        echo -e "generated feature_request.md... "
+        cd ..
+        cd ..
+        echo -e $reset
+        echo -e $green
+        echo -e "adding code_of_conduct.md & contributing.md..."
+        echo -e $reset
+        curl https://raw.githubusercontent.com/sadhukhanr/open-source/main/code_of_conduct.md > code_of_conduct.md
+        curl https://raw.githubusercontent.com/sadhukhanr/open-source/main/contributing.md > contributing.md
+        echo -e $green
+        echo -e "generated code_of_conduct.md... "
+        echo -e "generated contributing.md... "
         touch index.html
         touch index.pug
         touch LICENSE
+        echo -e "generated index.html... "
+        echo -e "generated index.pug... "
+        echo -e $reset
         echo -e $yellow
         echo "git initialization...."
         echo -e $reset
@@ -53,12 +91,14 @@ do
         echo -e $reset
         git remote -v > remote
         echo -e "# $y \n$x" > README.md
+        echo -e "generated remote... "
+        echo -e "generated README.md... "
         echo -e $yellow
         echo "node initialization...."
         echo -e $reset
         npm init
         git add .
-        git commit -m "creating base system"
+        git commit -m "commit by xlbr: created base system..."
         git log > log
         echo "finished!...";;
         c) msgg=${OPTARG}
