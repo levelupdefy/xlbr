@@ -1,18 +1,20 @@
-<h1 align="center"> excalibur </h1>
-<h3 align="center"> a web developement tool for git-cli </a>
+<h1 align="center">excalibur</h1>
+<h3 align="center">a web development tool for git-cli</a>
 <hr>
 <h2 align="center">how to add xlbr to my project?</h2>
+<h3 align="center">in git-cli</h3>
 
 ```
-# in git-cli
 curl https://raw.githubusercontent.com/sadhukhanr/excalibur/main/xlbr.sh > xlbr.sh
+```
+<h3 align="center">in ps</h3>
 
-# in ps
+```
 curl -L -o xlbr.sh https://raw.githubusercontent.com/sadhukhanr/excalibur/main/xlbr.sh
 ```
 <hr>
 <h2 align="center">how to use it?</h1>
-<p>to genetrate base system use these command<p>
+<p>to generate base system use this command<p>
 
 ```sh 
 ./xlbr.sh -b 'i'
@@ -28,8 +30,12 @@ curl -L -o xlbr.sh https://raw.githubusercontent.com/sadhukhanr/excalibur/main/x
 #to instsll jquary
 ./xlbr.sh -i 'jquary'
 ```
+<p>make commit<p>
+
+```
+./xlbr.sh -c 'commit'
+```
+
 ```
 status: in development stage
 ```
-
-
