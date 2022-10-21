@@ -49,6 +49,9 @@ cd ..
 
 git init
 git branch -m master main
+echo -e $red
+If you clone it from Github, Just leave it empty!
+echo -e $reset
 read -p "github user_name:" x
 read -p "github remote repo_name:" y
 git remote add origin "git@github.com:$x/$y.git"
@@ -412,7 +415,9 @@ root/
 rm -rf .gitignore
 echo -e "xlbr.sh \nfile_structure.txt" >.gitignore
 while true; do
-  read -p "Do you wanna make this project open source?" yn
+  echo -e $green
+  read -p "Do you wanna make this project open source?[y/n]" yn
+  echo -e $reset
   case $yn in
   [Yy]*)
     git add .
@@ -430,6 +435,10 @@ while true; do
     rm -- "$0"
     exit
     ;;
-  *) echo "Please answer yes or no." ;;
+  *)
+    echo -e $red
+    echo "Please answer yes or no."
+    echo -e $reset
+    ;;
   esac
 done
