@@ -50,7 +50,7 @@ cd ..
 git init
 git branch -m master main
 echo -e $red
-If you clone it from Github, Just leave it empty!
+echo -e "If you clone it from Github, Just leave it empty!"
 echo -e $reset
 read -p "github user_name:" x
 read -p "github remote repo_name:" y
